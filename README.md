@@ -1,2 +1,2 @@
 # webybasesdedatos2023
-cosas
+Desarrolla aplicaciones web con conexion a bases de datos
