@@ -48,7 +48,15 @@ $(document).ready(function(){
                 j1 -= 36;
                 dinero1+=200;
             }
-            $("#j1").html(j1);
+        }else {
+            j2 += dado;
+            if (j2 > 36) {
+                j2 -= 36;
+                dinero2+=200;
+            }
+            $("#j2").html(j2);
+            $("#dinero2").html(dinero2);
+        }$("#j1").html(j1);
             $("#dinero").html(dinero1);
             if(j1===10 || j2===10){
                 alert("andas de visita en la carcel cuidao")
@@ -80,15 +88,6 @@ $(document).ready(function(){
                     alert("no tenes plata pendejo")
                 }
             }
-        }else {
-            j2 += dado;
-            if (j2 > 36) {
-                j2 -= 36;
-                dinero2+=200;
-            }
-            $("#j2").html(j2);
-            $("#dinero2").html(dinero2);
-        }
         // Alternar el turno al otro jugador
         turnoJugador1 = !turnoJugador1;
     });
