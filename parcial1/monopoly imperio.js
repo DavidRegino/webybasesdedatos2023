@@ -7,61 +7,93 @@ $(document).ready(function(){
     var j1 = 1;
     var j2 = 1;
     var turnoJugador1 = true; // Variable para controlar el turno del jugador
-    var comprando = false;
-    var carcel1 = false;
-    var carcel2 = false;
+    var comprando = false; //variable para activar menu de compra
+    var carcel1 = false; //variable para saber si j1 esta en la carcel
+    var carcel2 = false; //lo mismo que el anterior pero para j2
 
-    function mostrarMenuDeCompra(){
+    function mostrarMenuDeCompra(){ //logica de la compra de las propiedades
         var eleccion = confirm("¿Deseas comprar esta propiedad?\n\nElige 'Aceptar' para comprar o 'Cancelar' para no comprar.");
         if (eleccion) {
-            if (turnoJugador1) {
+            if (turnoJugador1){
+                if(j1===13){
+                    var l=4;
+                    if(l>0){
+                        torre1 += 1;
+                        dinero1 -= 150;
+                        console.log("cobro luz")
+                        $("#dinero").html(dinero1);
+                        $("#torre1").html(torre1);
+                    }else{
+                        alert("ya no hay rotulos de luz")
+                    }
+                }
+                if(j1===31){
+                    var a=4;
+                    if(a>0){
+                        torre1 += 1;
+                        dinero1 -= 150;
+                        console.log("cobro agua")
+                        $("#dinero").html(dinero1);
+                        $("#torre1").html(torre1);
+                    }else{
+                        alert("ya no hay rotulos de agua")
+                    }
+                }
                 if(j1===2 || j1===4){
-                    torre1 += 1;
+                    torre1 +=1;
                     dinero1 -= 50;
                     console.log("cobro 50")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
                 if(j1===6 || j1===8 || j1===9){
                     torre1 +=1;
                     dinero1 -= 100;
                     console.log("cobro 100")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
                 if(j1 === 11 || j1 === 12 || j1=== 14){
                     torre1 += 2;
                     dinero1 -= 150;
                     console.log("cobro 150")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
                 if(j1===15 || j1===17 || j1===18){
                     torre1 += 2;
                     dinero1 -=200;
                     console.log("cobro 200")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
                 if(j1===20 || j1===21 || j1===23){
                     torre1 += 3;
                     dinero1 -=350;
                     console.log("cobro 300")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
                 if(j1===24 || j1===26 || j1===27){
                     torre1 += 3;
                     dinero1 -=300;
                     console.log("cobro 300")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
                 if(j1===29 || j1===30 || j1===32){
                     torre1 += 4;
                     dinero1 -=350;
                     console.log("cobro 350")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
                 if(j1===34 || j1===36){
                     torre1 += 4;
                     dinero1 -=400;
                     console.log("cobro 400")
                     $("#dinero").html(dinero1);
+                    $("#torre1").html(torre1);
                 }
 
             } else {
@@ -70,58 +102,65 @@ $(document).ready(function(){
                     dinero2 -= 50;
                     console.log("cobro 50")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
                 if(j2===6 || j2===8 || j2===9){
                     torre2 += 1;
                     dinero2 -= 100;
                     console.log("cobro 100")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
                 if(j2 === 11 || j2 === 12 || j2=== 14){
                     torre2 += 2;
                     dinero2 -= 150;
                     console.log("cobro 150")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
                 if(j2===15 || j2===17 || j2===18){
                     torre2 += 2;
                     dinero2 -=200;
                     console.log("cobro 200")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
                 if(j2===20 || j2===21 || j2===23){
                     torre2 += 3;
                     dinero2 -=350;
                     console.log("cobro 300")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
                 if(j2===24 || j2===26 || j2===27){
                     torre2 += 3;
                     dinero2 -=300;
                     console.log("cobro 300")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
                 if(j2===29 || j2===30 || j2===32){
                     torre2 += 4;
                     dinero2 -=350;
                     console.log("cobro 350")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
                 if(j2===34 || j2===36){
                     torre2 += 4;
                     dinero2 -=400;
                     console.log("cobro 400")
                     $("#dinero2").html(dinero2);
+                    $("#torre2").html(torre2);
                 }
             }
         }
-        
         comprando = false;
-        console.log("hola")
+        console.log("aun no gana nadie")
         turnoJugador1 = !turnoJugador1;
-    }
+    } //Fin de logica de compra de propiedades
 
-    function PagarCarcel(){
+    function PagarCarcel(){ //logica de pagar carcel
         var eleccion = confirm("¿Quieres pagar 50 y salir de prision");
         if(eleccion){
             if(turnoJugador1){
@@ -144,15 +183,15 @@ $(document).ready(function(){
         }
         console.log("menu carcel acabado")
         turnoJugador1 = !turnoJugador1;
-    }
+    } //Fin de logica de pagar carcel
 
-    $("#boton1").on("click", function(){
+    $("#boton1").on("click", function(){ //Dado
         dado = Math.floor(Math.random()*6+1);
         console.log("Un: " + dado);
         $("#dado").attr("src", "imagenes/dado" + dado + ".PNG");
         $("#numero").html(dado);
 
-        if (turnoJugador1) {
+        if (turnoJugador1) { //Logica del j1 para las casillas especiales y comprobacion de dinero
             j1 += dado;
             if (j1 > 36) {
                 j1 -= 36;
@@ -160,14 +199,36 @@ $(document).ready(function(){
             }
             $("#j1").html(j1);
             $("#dinero").html(dinero1);
+            if(j1===13 || j1===31){
+                if(dinero1 >= 150){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("j1 no tenes plata pendejo")
+                }
+            }
+            if(j1===7 || j1===16 || j1===22 || j1===33){
+                alert("prueba carta fortune j1")
+            }
+            if(j1===3){
+                alert("quitaremos una ficha de la torre de tu rival que es j2")
+            }
+            if(j1===35){
+                alert("quitaremos una ficha de tu torre j1")
+            }
+            if(j1===5 || j1===25){
+                alert("prueba de carta empire para j1")
+            }
             if(j1===10){
-                alert("andas de visita en la carcel cuidao")
+                alert("j1 andas de visita en la carcel cuidao")
             }
             if(j1===19){
                 alert("No pasa nada")
             }
             if(j1===28){
-                alert("Cometiste lavado de dinero pa la carcel puto")
+                alert("j1 Cometiste lavado de dinero pa la carcel puto")
                    j1=50;
                 carcel1 = true;
                 if(dinero1 >= 50){
@@ -175,20 +236,7 @@ $(document).ready(function(){
                     if(!carcel1){
                         return;
                     }
-                }else{
-                    alert("No tienes pa la fianza ni familia que te pague tonto")
-                } 
-                    j2=50;
-                carcel2 = true;
-                if(dinero1 >= 50){
-                    PagarCarcel();
-                    if(!carcel1){
-                        return;
-                    }
-                }else{
-                    alert("No tienes pa la fianza ni familia que te pague tonto")
                 }
-                
             }
             if(j1===2 || j1===4){
                 if(dinero1 >= 50){
@@ -197,7 +245,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
                 
             }
@@ -208,7 +256,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
             }
             if(j1 === 11 || j1 === 12 || j1=== 14){
@@ -218,7 +266,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
             }
             if(j1 === 15 || j1 === 17 || j1=== 18){
@@ -228,7 +276,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
             }
             if(j1 === 20 || j1 === 21 || j1=== 23){
@@ -238,7 +286,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
             }
             if(j1 === 24 || j1 === 26 || j1=== 27){
@@ -248,7 +296,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
             }
             if(j1 === 29 || j1 ===30 || j1=== 32){
@@ -258,7 +306,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
             }
             if(j1 === 34 || j1 ===36){
@@ -268,10 +316,12 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j1 no tenes plata pendejo")
                 }
-            }
-        }else {
+            } //Fin logica de comprobacion de dinero y casillas especiales
+
+
+        }else { //Logica del j2 para casillas especiales y comprobacion de dinero
             j2 += dado;
             if (j2 > 36) {
                 j2 -= 36;
@@ -279,14 +329,36 @@ $(document).ready(function(){
             }
             $("#j2").html(j2);
             $("#dinero2").html(dinero2);
+            if(j2===13 || j2===31){
+                if(dinero1 >= 150){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("j2 no tenes plata pendejo")
+                }
+            }
+            if(j2===7 || j2===16 || j2===22 || j2===33){
+                alert("prueba carta fortune para j2")
+            }
+            if(j2===3){
+                alert("quitaremos una ficha de la torre de tu rival que es j1")
+            }
+            if(j2===35){
+                alert("quitaremos una ficha de tu torre j2")
+            }
+            if(j2===5 || j2===25){
+                alert("prueba de carta empire para j2")
+            }
             if(j2===10){
-                alert("andas de visita en la carcel cuidao")                
+                alert("j2 andas de visita en la carcel cuidao")                
             }
             if(j2===19){
                 alert("No pasa nada")
             }
             if(j2===28){
-                alert("Cometiste lavado de dinero pa la carcel puto")
+                alert("j2 Cometiste lavado de dinero pa la carcel puto")
                 j2=50;
                 carcel2 = true;
                 if(dinero2 >= 50){
@@ -295,7 +367,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("No tienes pa la fianza ni familia que te pague tonto")
+                    alert("j2 No tienes pa la fianza ni familia que te pague tonto")
                 }
             }
             if(j2===2 || j2===4){
@@ -305,7 +377,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j2 no tenes plata pendejo")
                 }
                 }
             if(j2===6 || j2===2 || j2===9){
@@ -315,7 +387,7 @@ $(document).ready(function(){
                         return;
                     }
                 }else{
-                    alert("no tenes plata pendejo")
+                    alert("j2 no tenes plata pendejo")
                 }
                 }
                 if(j2 === 11 || j2 === 12 || j2=== 14){
@@ -325,7 +397,7 @@ $(document).ready(function(){
                             return;
                         }
                     }else{
-                        alert("no tenes plata pendejo")
+                        alert("j2 no tenes plata pendejo")
                     }
                 }
                 if(j2 === 15 || j2 === 17 || j2=== 18){
@@ -335,7 +407,7 @@ $(document).ready(function(){
                             return;
                         }
                     }else{
-                        alert("no tenes plata pendejo")
+                        alert("j2 no tenes plata pendejo")
                     }
                 }
                 if(j2 === 20 || j2 === 21 || j2=== 23){
@@ -345,7 +417,7 @@ $(document).ready(function(){
                             return;
                         }
                     }else{
-                        alert("no tenes plata pendejo")
+                        alert("j2 no tenes plata pendejo")
                     }
                 }
                 if(j2 === 24 || j2 === 26 || j2=== 27){
@@ -355,7 +427,7 @@ $(document).ready(function(){
                             return;
                         }
                     }else{
-                        alert("no tenes plata pendejo")
+                        alert("j2 no tenes plata pendejo")
                     }
                 }
                 if(j2 === 29 || j2 ===30 || j2=== 32){
@@ -365,7 +437,7 @@ $(document).ready(function(){
                             return;
                         }
                     }else{
-                        alert("no tenes plata pendejo")
+                        alert("j2 no tenes plata pendejo")
                     }
                 }
                 if(j2 === 34 || j2 ===36){
@@ -375,13 +447,20 @@ $(document).ready(function(){
                             return;
                         }
                     }else{
-                        alert("no tenes plata pendejo")
+                        alert("j2 no tenes plata pendejo")
                     }
                 }
-            }
+            } //Fin de logica del j2 para casillas especiales y comprobacion de dinero
+
+         //Cambio de turno correcto en caso de activar la carcel   
         if(carcel1 || carcel2){
             PagarCarcel();
         }
+        if(torre1===17 || torre2===17){
+            alert("ganaste")
+            console.log("ganador")
+        }
+        //Cambio de turno correcto en caso de activar menu de compra
         if(comprando){
             mostrarMenuDeCompra();
         }
