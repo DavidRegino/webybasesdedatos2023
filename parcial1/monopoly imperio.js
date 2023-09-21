@@ -25,6 +25,16 @@ $(document).ready(function(){
                     console.log("cobro 100")
                     $("#dinero").html(dinero1);
                 }
+                if(j1 === 11 || j1 === 12 || j1=== 14){
+                    dinero1 -= 150;
+                    console.log("cobro 150")
+                    $("#dinero").html(dinero1);
+                }
+                if(j1===15 || j1===17 || j1===18){
+                    dinero1 -=200;
+                    console.log("cobro 200")
+                    $("#dinero").html(dinero1);
+                }
             } else {
                 if(j2===2 || j2===4){
                     dinero2 -= 50;
@@ -36,34 +46,47 @@ $(document).ready(function(){
                     console.log("cobro 100")
                     $("#dinero2").html(dinero2);
                 }
+                if(j2 === 11 || j2 === 12 || j2=== 14){
+                    dinero2 -= 150;
+                    console.log("cobro 150")
+                    $("#dinero2").html(dinero2);
+                }
+                if(j2===15 || j2===17 || j2===18){
+                    dinero2 -=200;
+                    console.log("cobro 200")
+                    $("#dinero2").html(dinero2);
+                }
             }
         }
+        
         comprando = false;
         console.log("hola")
+        turnoJugador1 = !turnoJugador1;
     }
 
     function PagarCarcel(){
         var eleccion = confirm("¿Quieres pagar 50 y salir de prision");
         if(eleccion){
             if(turnoJugador1){
-                if(j1===37){
-                    for(var i=0; i<=3; i++){
+                if(j1===50){
                         dinero1 -= 50;
                         console.log("libre1")
                         carcel1 = false;
                         j1=10;
-                    } 
+                        $("#dinero").html(dinero1);
                 }
             }else{
-                if(j2===37){
+                if(j2===50){
                     dinero2 -= 50;
                     console.log("libre2")
                     carcel2=false;
                     j2=10
+                    $("#dinero2").html(dinero2);
                 }
             }
         }
-        console.log("salida")
+        console.log("menu carcel acabado")
+        turnoJugador1 = !turnoJugador1;
     }
 
     $("#boton1").on("click", function(){
@@ -73,22 +96,22 @@ $(document).ready(function(){
         $("#numero").html(dado);
 
         if (turnoJugador1) {
-            j1 += 27;
+            j1 += dado;
             if (j1 > 36) {
                 j1 -= 36;
                 dinero1+=200;
             }
             $("#j1").html(j1);
             $("#dinero").html(dinero1);
-            if(j1===10 || j2===10){
+            if(j1===10){
                 alert("andas de visita en la carcel cuidao")
             }
-            if(j1===19 || j2===19){
+            if(j1===19){
                 alert("No pasa nada")
             }
-            if(j1===28 || j2===28){
+            if(j1===28){
                 alert("Cometiste lavado de dinero pa la carcel puto")
-                j1=37;
+                   j1=50;
                 carcel1 = true;
                 if(dinero1 >= 50){
                     PagarCarcel();
@@ -97,9 +120,20 @@ $(document).ready(function(){
                     }
                 }else{
                     alert("No tienes pa la fianza ni familia que te pague tonto")
+                } 
+                    j2=50;
+                carcel2 = true;
+                if(dinero1 >= 50){
+                    PagarCarcel();
+                    if(!carcel1){
+                        return;
+                    }
+                }else{
+                    alert("No tienes pa la fianza ni familia que te pague tonto")
                 }
+                
             }
-            if(j1===2 || j1===4 || j2===2 || j2===4){
+            if(j1===2 || j1===4){
                 if(dinero1 >= 50){
                     mostrarMenuDeCompra();
                     if(!comprando){
@@ -110,7 +144,7 @@ $(document).ready(function(){
                 }
                 
             }
-            if(j1===6 || j1===8 || j1===9 || j2===6 || j2===8 || j2===9){
+            if(j1===6 || j1===8 || j1===9){
                 if(dinero1 >= 100){
                     mostrarMenuDeCompra();
                     if(!comprando){
@@ -120,6 +154,11 @@ $(document).ready(function(){
                     alert("no tenes plata pendejo")
                 }
             }
+            if(j1 === 11 || j1 === 12 || j1=== 14){
+                dinero1 -= 150;
+                console.log("cobro 150")
+                $("#dinero").html(dinero1);
+            }
         }else {
             j2 += dado;
             if (j2 > 36) {
@@ -128,6 +167,51 @@ $(document).ready(function(){
             }
             $("#j2").html(j2);
             $("#dinero2").html(dinero2);
+            if(j2===10){
+                alert("andas de visita en la carcel cuidao")                
+            }
+            if(j2===19){
+                alert("No pasa nada")
+            }
+            if(j2===28){
+                alert("Cometiste lavado de dinero pa la carcel puto")
+                j2=50;
+                carcel2 = true;
+                if(dinero2 >= 50){
+                    PagarCarcel();
+                    if(!carcel2){
+                        return;
+                    }
+                }else{
+                    alert("No tienes pa la fianza ni familia que te pague tonto")
+                }
+            }
+            if(j2===2 || j2===4){
+                if(dinero2 >=50){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
+                }
+            if(j2===6 || j2===2 || j2===9){
+                if(dinero2 >=100){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
+                }
+            }
+        if(carcel1 || carcel2){
+            PagarCarcel();
+        }
+        if(comprando){
+            mostrarMenuDeCompra();
         }
         // Alternar el turno al otro jugador
         turnoJugador1 = !turnoJugador1;
