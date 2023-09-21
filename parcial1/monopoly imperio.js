@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    var dinero1 = 1500;
-    var dinero2 = 1500;
+    var dinero1 = 1000;
+    var dinero2 = 1000;
     var dado = 0;
     var torre1 = 0;
     var torre2 = 0;
@@ -16,44 +16,101 @@ $(document).ready(function(){
         if (eleccion) {
             if (turnoJugador1) {
                 if(j1===2 || j1===4){
+                    torre1 += 1;
                     dinero1 -= 50;
                     console.log("cobro 50")
                     $("#dinero").html(dinero1);
                 }
                 if(j1===6 || j1===8 || j1===9){
+                    torre1 +=1;
                     dinero1 -= 100;
                     console.log("cobro 100")
                     $("#dinero").html(dinero1);
                 }
                 if(j1 === 11 || j1 === 12 || j1=== 14){
+                    torre1 += 2;
                     dinero1 -= 150;
                     console.log("cobro 150")
                     $("#dinero").html(dinero1);
                 }
                 if(j1===15 || j1===17 || j1===18){
+                    torre1 += 2;
                     dinero1 -=200;
                     console.log("cobro 200")
                     $("#dinero").html(dinero1);
                 }
+                if(j1===20 || j1===21 || j1===23){
+                    torre1 += 3;
+                    dinero1 -=350;
+                    console.log("cobro 300")
+                    $("#dinero").html(dinero1);
+                }
+                if(j1===24 || j1===26 || j1===27){
+                    torre1 += 3;
+                    dinero1 -=300;
+                    console.log("cobro 300")
+                    $("#dinero").html(dinero1);
+                }
+                if(j1===29 || j1===30 || j1===32){
+                    torre1 += 4;
+                    dinero1 -=350;
+                    console.log("cobro 350")
+                    $("#dinero").html(dinero1);
+                }
+                if(j1===34 || j1===36){
+                    torre1 += 4;
+                    dinero1 -=400;
+                    console.log("cobro 400")
+                    $("#dinero").html(dinero1);
+                }
+
             } else {
                 if(j2===2 || j2===4){
+                    torre2 += 1;
                     dinero2 -= 50;
                     console.log("cobro 50")
                     $("#dinero2").html(dinero2);
                 }
                 if(j2===6 || j2===8 || j2===9){
+                    torre2 += 1;
                     dinero2 -= 100;
                     console.log("cobro 100")
                     $("#dinero2").html(dinero2);
                 }
                 if(j2 === 11 || j2 === 12 || j2=== 14){
+                    torre2 += 2;
                     dinero2 -= 150;
                     console.log("cobro 150")
                     $("#dinero2").html(dinero2);
                 }
                 if(j2===15 || j2===17 || j2===18){
+                    torre2 += 2;
                     dinero2 -=200;
                     console.log("cobro 200")
+                    $("#dinero2").html(dinero2);
+                }
+                if(j2===20 || j2===21 || j2===23){
+                    torre2 += 3;
+                    dinero2 -=350;
+                    console.log("cobro 300")
+                    $("#dinero2").html(dinero2);
+                }
+                if(j2===24 || j2===26 || j2===27){
+                    torre2 += 3;
+                    dinero2 -=300;
+                    console.log("cobro 300")
+                    $("#dinero2").html(dinero2);
+                }
+                if(j2===29 || j2===30 || j2===32){
+                    torre2 += 4;
+                    dinero2 -=350;
+                    console.log("cobro 350")
+                    $("#dinero2").html(dinero2);
+                }
+                if(j2===34 || j2===36){
+                    torre2 += 4;
+                    dinero2 -=400;
+                    console.log("cobro 400")
                     $("#dinero2").html(dinero2);
                 }
             }
@@ -69,7 +126,7 @@ $(document).ready(function(){
         if(eleccion){
             if(turnoJugador1){
                 if(j1===50){
-                        dinero1 -= 50;
+                        dinero1 -= 100;
                         console.log("libre1")
                         carcel1 = false;
                         j1=10;
@@ -77,7 +134,7 @@ $(document).ready(function(){
                 }
             }else{
                 if(j2===50){
-                    dinero2 -= 50;
+                    dinero2 -= 100;
                     console.log("libre2")
                     carcel2=false;
                     j2=10
@@ -155,9 +212,64 @@ $(document).ready(function(){
                 }
             }
             if(j1 === 11 || j1 === 12 || j1=== 14){
-                dinero1 -= 150;
-                console.log("cobro 150")
-                $("#dinero").html(dinero1);
+                if(dinero1 >= 150){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
+            }
+            if(j1 === 15 || j1 === 17 || j1=== 18){
+                if(dinero1 >= 200){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
+            }
+            if(j1 === 20 || j1 === 21 || j1=== 23){
+                if(dinero1 >= 250){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
+            }
+            if(j1 === 24 || j1 === 26 || j1=== 27){
+                if(dinero1 >= 300){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
+            }
+            if(j1 === 29 || j1 ===30 || j1=== 32){
+                if(dinero1 >= 350){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
+            }
+            if(j1 === 34 || j1 ===36){
+                if(dinero1 >= 400){
+                    mostrarMenuDeCompra();
+                    if(!comprando){
+                        return;
+                    }
+                }else{
+                    alert("no tenes plata pendejo")
+                }
             }
         }else {
             j2 += dado;
@@ -205,6 +317,66 @@ $(document).ready(function(){
                 }else{
                     alert("no tenes plata pendejo")
                 }
+                }
+                if(j2 === 11 || j2 === 12 || j2=== 14){
+                    if(dinero2 >= 150){
+                        mostrarMenuDeCompra();
+                        if(!comprando){
+                            return;
+                        }
+                    }else{
+                        alert("no tenes plata pendejo")
+                    }
+                }
+                if(j2 === 15 || j2 === 17 || j2=== 18){
+                    if(dinero2 >= 200){
+                        mostrarMenuDeCompra();
+                        if(!comprando){
+                            return;
+                        }
+                    }else{
+                        alert("no tenes plata pendejo")
+                    }
+                }
+                if(j2 === 20 || j2 === 21 || j2=== 23){
+                    if(dinero2 >= 250){
+                        mostrarMenuDeCompra();
+                        if(!comprando){
+                            return;
+                        }
+                    }else{
+                        alert("no tenes plata pendejo")
+                    }
+                }
+                if(j2 === 24 || j2 === 26 || j2=== 27){
+                    if(dinero2 >= 300){
+                        mostrarMenuDeCompra();
+                        if(!comprando){
+                            return;
+                        }
+                    }else{
+                        alert("no tenes plata pendejo")
+                    }
+                }
+                if(j2 === 29 || j2 ===30 || j2=== 32){
+                    if(dinero2 >= 350){
+                        mostrarMenuDeCompra();
+                        if(!comprando){
+                            return;
+                        }
+                    }else{
+                        alert("no tenes plata pendejo")
+                    }
+                }
+                if(j2 === 34 || j2 ===36){
+                    if(dinero2 >= 400){
+                        mostrarMenuDeCompra();
+                        if(!comprando){
+                            return;
+                        }
+                    }else{
+                        alert("no tenes plata pendejo")
+                    }
                 }
             }
         if(carcel1 || carcel2){
