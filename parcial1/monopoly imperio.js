@@ -20,7 +20,7 @@ $(document).ready(function(){
                     if(l>0){
                         torre1 += 1;
                         dinero1 -= 150;
-                        console.log("cobro luz")
+                        console.log("j1 cobro luz")
                         $("#dinero").html(dinero1);
                         $("#torre1").html(torre1);
                     }else{
@@ -32,7 +32,7 @@ $(document).ready(function(){
                     if(a>0){
                         torre1 += 1;
                         dinero1 -= 150;
-                        console.log("cobro agua")
+                        console.log("j1 cobro agua")
                         $("#dinero").html(dinero1);
                         $("#torre1").html(torre1);
                     }else{
@@ -42,56 +42,56 @@ $(document).ready(function(){
                 if(j1===2 || j1===4){
                     torre1 +=1;
                     dinero1 -= 50;
-                    console.log("cobro 50")
+                    console.log("j1 cobro 50")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
                 if(j1===6 || j1===8 || j1===9){
                     torre1 +=1;
                     dinero1 -= 100;
-                    console.log("cobro 100")
+                    console.log("j1 cobro 100")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
                 if(j1 === 11 || j1 === 12 || j1=== 14){
                     torre1 += 2;
                     dinero1 -= 150;
-                    console.log("cobro 150")
+                    console.log("j1 cobro 150")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
                 if(j1===15 || j1===17 || j1===18){
                     torre1 += 2;
                     dinero1 -=200;
-                    console.log("cobro 200")
+                    console.log("j1 cobro 200")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
                 if(j1===20 || j1===21 || j1===23){
                     torre1 += 3;
                     dinero1 -=350;
-                    console.log("cobro 300")
+                    console.log("j1 cobro 300")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
                 if(j1===24 || j1===26 || j1===27){
                     torre1 += 3;
                     dinero1 -=300;
-                    console.log("cobro 300")
+                    console.log("j1 cobro 300")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
                 if(j1===29 || j1===30 || j1===32){
                     torre1 += 4;
                     dinero1 -=350;
-                    console.log("cobro 350")
+                    console.log("j1 cobro 350")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
                 if(j1===34 || j1===36){
                     torre1 += 4;
                     dinero1 -=400;
-                    console.log("cobro 400")
+                    console.log("j1 cobro 400")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
@@ -100,56 +100,56 @@ $(document).ready(function(){
                 if(j2===2 || j2===4){
                     torre2 += 1;
                     dinero2 -= 50;
-                    console.log("cobro 50")
+                    console.log("j2 cobro 50")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
                 if(j2===6 || j2===8 || j2===9){
                     torre2 += 1;
                     dinero2 -= 100;
-                    console.log("cobro 100")
+                    console.log("j2 cobro 100")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
                 if(j2 === 11 || j2 === 12 || j2=== 14){
                     torre2 += 2;
                     dinero2 -= 150;
-                    console.log("cobro 150")
+                    console.log("j2 cobro 150")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
                 if(j2===15 || j2===17 || j2===18){
                     torre2 += 2;
                     dinero2 -=200;
-                    console.log("cobro 200")
+                    console.log("j2 cobro 200")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
                 if(j2===20 || j2===21 || j2===23){
                     torre2 += 3;
                     dinero2 -=350;
-                    console.log("cobro 300")
+                    console.log("j2 cobro 300")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
                 if(j2===24 || j2===26 || j2===27){
                     torre2 += 3;
                     dinero2 -=300;
-                    console.log("cobro 300")
+                    console.log("j2 cobro 300")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
                 if(j2===29 || j2===30 || j2===32){
                     torre2 += 4;
                     dinero2 -=350;
-                    console.log("cobro 350")
+                    console.log("j2 cobro 350")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
                 if(j2===34 || j2===36){
                     torre2 += 4;
                     dinero2 -=400;
-                    console.log("cobro 400")
+                    console.log("j2 cobro 400")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
@@ -231,7 +231,7 @@ $(document).ready(function(){
                 alert("j1 Cometiste lavado de dinero pa la carcel puto")
                    j1=50;
                 carcel1 = true;
-                if(dinero1 >= 50){
+                if(dinero1 >= 100){
                     PagarCarcel();
                     if(!carcel1){
                         return;
@@ -361,7 +361,7 @@ $(document).ready(function(){
                 alert("j2 Cometiste lavado de dinero pa la carcel puto")
                 j2=50;
                 carcel2 = true;
-                if(dinero2 >= 50){
+                if(dinero2 >= 100){
                     PagarCarcel();
                     if(!carcel2){
                         return;
@@ -456,9 +456,12 @@ $(document).ready(function(){
         if(carcel1 || carcel2){
             PagarCarcel();
         }
-        if(torre1===17 || torre2===17){
-            alert("ganaste")
-            console.log("ganador")
+        if(torre1===17){
+            alert("j1 Ganaste")
+            console.log("ganador j1")
+        }else if(torre2===17){
+            alert("j2 Ganaste")
+            console.log("j2 ganador")
         }
         //Cambio de turno correcto en caso de activar menu de compra
         if(comprando){
