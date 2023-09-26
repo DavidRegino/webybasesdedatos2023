@@ -11,6 +11,46 @@ $(document).ready(function(){
     var carcel1 = false; //variable para saber si j1 esta en la carcel
     var carcel2 = false; //lo mismo que el anterior pero para j2
 
+    var Carta_Chance = [
+        "Pagas A Hacienda",
+        "Ve A La Carcel Por Evadir El Sat",
+        "Avanza 5 Casillas",
+        "Loteria, Ganaste $300"
+      ];
+
+      var Carta_Empire = [
+        "Sal Gratis De La Carcel",
+        "Compra Lo Que Quieras Por $100",
+        "Cobra $400 Al Oponente",
+        "Roba La Ultima Propiedad Del Oponente"
+      ];
+
+      
+      var Mezclar_Chance = Math.floor(Math.random() * Carta_Chance.length);
+      var Chance = Carta_Chance[Mezclar_Chance];
+
+      var Mezclar_Empire = Math.floor(Math.random() * Carta_Empire.length);
+      var Empire = Carta_Empire[Mezclar_Empire];
+
+     // Define la función para mezclar la lista de archivos
+    function mezclarListaArchivos() {
+        // Define la lista de archivos .png
+        var archivos = [
+            'imperio test.png',
+        ];
+
+        // Crea una copia de la lista original para no modificarla directamente
+        var listaMezclada = [...archivos];
+
+        // Aplica el algoritmo de Fisher-Yates para mezclar aleatoriamente la lista
+        for (let i = listaMezclada.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            [listaMezclada[i], listaMezclada[j]] = [listaMezclada[j], listaMezclada[i]];
+        }
+
+        return listaMezclada;
+    }
+
     function mostrarMenuDeCompra(){ //logica de la compra de las propiedades
         var eleccion = confirm("¿Deseas comprar esta propiedad?\n\nElige 'Aceptar' para comprar o 'Cancelar' para no comprar.");
         if (eleccion) {
@@ -211,6 +251,7 @@ $(document).ready(function(){
             }
             if(j1===7 || j1===16 || j1===22 || j1===33){
                 alert("prueba carta fortune j1")
+                  alert(Chance);
             }
             if(j1===3){
                 alert("quitaremos una ficha de la torre de tu rival que es j2")
@@ -219,7 +260,7 @@ $(document).ready(function(){
                 alert("quitaremos una ficha de tu torre j1")
             }
             if(j1===5 || j1===25){
-                alert("prueba de carta empire para j1")
+                alert(Empire)
             }
             if(j1===10){
                 alert("j1 andas de visita en la carcel cuidao")
@@ -340,7 +381,7 @@ $(document).ready(function(){
                 }
             }
             if(j2===7 || j2===16 || j2===22 || j2===33){
-                alert("prueba carta fortune para j2")
+                alert(Chance)
             }
             if(j2===3){
                 alert("quitaremos una ficha de la torre de tu rival que es j1")
@@ -349,7 +390,7 @@ $(document).ready(function(){
                 alert("quitaremos una ficha de tu torre j2")
             }
             if(j2===5 || j2===25){
-                alert("prueba de carta empire para j2")
+                alert(Empire)
             }
             if(j2===10){
                 alert("j2 andas de visita en la carcel cuidao")                
