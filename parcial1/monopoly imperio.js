@@ -25,6 +25,32 @@ $(document).ready(function(){
         "Roba La Ultima Propiedad Del Oponente"
       ];
 
+      //propiedades insanas como no puedo poner espacios se ve culero pero asi funciona "propiedad" "precio" "numero de propiedad"
+      var propiedades={
+        propiedad501:{comprada: null, precio: 50},
+        propiedad502:{comprada: null, precio: 50},
+        propiedad1001:{comprada: null, precio: 100},
+        propiedad1002:{comprada: null, precio: 100},
+        propiedad1003:{comprada: null, precio: 100},
+        propiedad1501:{comprada: null, precio: 150},
+        propiedad1502:{comprada: null, precio: 150},
+        propiedad1503:{comprada: null, precio: 150},
+        propiedad2001:{comprada: null, precio: 200},
+        propiedad2002:{comprada: null, precio: 200},
+        propiedad2003:{comprada: null, precio: 200},
+        propiedad2501:{comprada: null, precio: 250},
+        propiedad2502:{comprada: null, precio: 250},
+        propiedad2503:{comprada: null, precio: 250},
+        propiedad3001:{comprada: null, precio: 300},
+        propiedad3002:{comprada: null, precio: 300},
+        propiedad3003:{comprada: null, precio: 300},
+        propiedad3501:{comprada: null, precio: 350},
+        propiedad3502:{comprada: null, precio: 350},
+        propiedad3503:{comprada: null, precio: 350},
+        propiedad4001:{comprada: null, precio: 400},
+        propiedad4002:{comprada: null, precio: 400},
+      }
+
       
       var Mezclar_Chance = Math.floor(Math.random() * Carta_Chance.length);
       var Chance = Carta_Chance[Mezclar_Chance];
@@ -80,18 +106,72 @@ $(document).ready(function(){
                     }
                 }
                 if(j1===2 || j1===4){
-                    torre1 +=1;
-                    dinero1 -= 50;
-                    console.log("j1 cobro 50")
-                    $("#dinero").html(dinero1);
-                    $("#torre1").html(torre1);
+                    if(j1===2){
+                        if (propiedades.propiedad501.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad501.comprada);
+                            console.log("j1 es dueno de 50 1")
+                        }else{
+                        propiedades.propiedad501.comprada = "Jugador 1";
+                        torre1 +=1;
+                        dinero1 -= 50;
+                        console.log("j1 cobro 50")
+                        $("#dinero").html(dinero1);
+                        $("#torre1").html(torre1);
+                        }   
+                    }else{
+                        if (propiedades.propiedad502.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad502.comprada);
+                            console.log("j1 es dueno de 50 2")
+                        }else{
+                          propiedades.propiedad502.comprada = "Jugador 1";
+                        torre1 +=1;
+                        dinero1 -= 50;
+                        console.log("j1 cobro 50")
+                        $("#dinero").html(dinero1);
+                        $("#torre1").html(torre1);  
+                        }
+                        
+                    }
+                    
                 }
                 if(j1===6 || j1===8 || j1===9){
-                    torre1 +=1;
-                    dinero1 -= 100;
-                    console.log("j1 cobro 100")
-                    $("#dinero").html(dinero1);
-                    $("#torre1").html(torre1);
+                    if(j1===6){
+                        if (propiedades.propiedad1001.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad1001.comprada);
+                            console.log("j1 es dueno de 100 1")
+                        }else{
+                        propiedades.propiedad1001.comprada = "Jugador 1";
+                        torre1 +=1;
+                        dinero1 -= 100;
+                        console.log("j1 cobro 100")
+                        $("#dinero").html(dinero1);
+                        $("#torre1").html(torre1);
+                        }   
+                    }else if(j1===8){
+                        if (propiedades.propiedad1002.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad1002.comprada);
+                            console.log("j1 es dueno de 100 2")
+                        }else{
+                        propiedades.propiedad1002.comprada = "Jugador 1";
+                        torre1 +=1;
+                        dinero1 -= 100;
+                        console.log("j1 cobro 100")
+                        $("#dinero").html(dinero1);
+                        $("#torre1").html(torre1);
+                        }
+                    }else{
+                        if (propiedades.propiedad1003.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad1003.comprada);
+                            console.log("j1 es dueno de 100 3")
+                        }else{
+                        propiedades.propiedad1003.comprada = "Jugador 1";
+                        torre1 +=1;
+                        dinero1 -= 100;
+                        console.log("j1 cobro 100")
+                        $("#dinero").html(dinero1);
+                        $("#torre1").html(torre1);
+                        }
+                    }
                 }
                 if(j1 === 11 || j1 === 12 || j1=== 14){
                     torre1 += 2;
@@ -109,8 +189,8 @@ $(document).ready(function(){
                 }
                 if(j1===20 || j1===21 || j1===23){
                     torre1 += 3;
-                    dinero1 -=350;
-                    console.log("j1 cobro 300")
+                    dinero1 -=250;
+                    console.log("j1 cobro 250")
                     $("#dinero").html(dinero1);
                     $("#torre1").html(torre1);
                 }
@@ -138,18 +218,72 @@ $(document).ready(function(){
 
             } else {
                 if(j2===2 || j2===4){
-                    torre2 += 1;
-                    dinero2 -= 50;
-                    console.log("j2 cobro 50")
-                    $("#dinero2").html(dinero2);
-                    $("#torre2").html(torre2);
+                    if(j2===2){
+                        if (propiedades.propiedad501.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad501.comprada);
+                            console.log("j2 es dueno de 50 1")
+                        }else{
+                        propiedades.propiedad501.comprada = "Jugador 2";
+                        torre2 +=1;
+                        dinero2 -= 50;
+                        console.log("j2 cobro 50")
+                        $("#dinero2").html(dinero2);
+                        $("#torre2").html(torre2);
+                        }   
+                    }else{
+                        if (propiedades.propiedad502.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad502.comprada);
+                            console.log("j2 es dueno de 50 2")
+                        }else{
+                          propiedades.propiedad502.comprada = "Jugador 2";
+                        torre2 +=1;
+                        dinero2 -= 50;
+                        console.log("j2 cobro 50")
+                        $("#dinero2").html(dinero2);
+                        $("#torre2").html(torre2);  
+                        }
+                        
+                    }
+                    
                 }
                 if(j2===6 || j2===8 || j2===9){
-                    torre2 += 1;
-                    dinero2 -= 100;
-                    console.log("j2 cobro 100")
-                    $("#dinero2").html(dinero2);
-                    $("#torre2").html(torre2);
+                    if(j2===6){
+                        if (propiedades.propiedad1001.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad1001.comprada);
+                            console.log("j2 es dueno de 100 1")
+                        }else{
+                        propiedades.propiedad1001.comprada = "Jugador 2";
+                        torre2 +=1;
+                        dinero2 -= 100;
+                        console.log("j2 cobro 100")
+                        $("#dinero2").html(dinero2);
+                        $("#torre2").html(torre2);
+                        }   
+                    }else if(j2===8){
+                        if (propiedades.propiedad1002.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad1002.comprada);
+                            console.log("j2 es dueno de 100 2")
+                        }else{
+                        propiedades.propiedad1002.comprada = "Jugador 2";
+                        torre2 +=1;
+                        dinero2 -= 100;
+                        console.log("j2 cobro 100")
+                        $("#dinero2").html(dinero2);
+                        $("#torre2").html(torre2);
+                        }
+                    }else{
+                        if (propiedades.propiedad1003.comprada !== null) {
+                            alert("Esta propiedad pertenece a " + propiedades.propiedad1003.comprada);
+                            console.log("j2 es dueno de 100 3")
+                        }else{
+                        propiedades.propiedad1003.comprada = "Jugador 2";
+                        torre2 +=1;
+                        dinero2 -= 100;
+                        console.log("j2 cobro 100")
+                        $("#dinero2").html(dinero2);
+                        $("#torre2").html(torre2);
+                        }
+                    }
                 }
                 if(j2 === 11 || j2 === 12 || j2=== 14){
                     torre2 += 2;
@@ -167,8 +301,8 @@ $(document).ready(function(){
                 }
                 if(j2===20 || j2===21 || j2===23){
                     torre2 += 3;
-                    dinero2 -=350;
-                    console.log("j2 cobro 300")
+                    dinero2 -=250;
+                    console.log("j2 cobro 250")
                     $("#dinero2").html(dinero2);
                     $("#torre2").html(torre2);
                 }
