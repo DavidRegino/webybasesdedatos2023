@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incio</title>
+    <title>Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
@@ -43,5 +43,19 @@
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <div class="row">
+    <div class="card m-2">
+      <h1>Sistema de gestion de control escolar</h1>
+      <h3>CETIS107</h3>
+      <img src="imagenes/logo.png" width="128px">
+    </div>
+  </div>
+</div>
+
+<footer class="text-center">
+  <span>Cetis 107 web app &copy; 2023</span>
+</footer>
 </body>
 </html>
