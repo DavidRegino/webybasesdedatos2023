@@ -26,8 +26,8 @@
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="inicio.php">Inicio</a></li>
+            <li><a class="dropdown-item" href="ConsultarAlumnos.php">Consultar Alumnos</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
@@ -57,5 +57,6 @@
 <footer class="text-center">
   <span>Cetis 107 web app &copy; 2023</span>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
