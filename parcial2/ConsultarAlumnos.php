@@ -28,7 +28,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php while($registro = $datos->fetch_assoc()){?>
+                                <tr>
+                                    <td><?php echo $registro["id"]?></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
                         </tbody>
                     </table>
                 <?php }else{?>
