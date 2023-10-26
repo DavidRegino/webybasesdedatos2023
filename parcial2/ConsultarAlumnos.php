@@ -31,12 +31,12 @@
                             <?php while($registro = $datos->fetch_assoc()){?>
                                 <tr>
                                     <td><?php echo $registro["id"]?></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?php echo $registro["nombre"]?></td>
+                                    <td><?php echo $registro["nc"]?></td>
+                                    <td><?php echo $registro["semestre"]?></td>
+                                    <td><?php echo $registro["edad"]?></td>
+                                    <td><?php echo $registro["turno"]?></td>
+                                    <td><?php echo $registro["sexo"]?></td>
                                 </tr>
                         </tbody>
                     </table>
