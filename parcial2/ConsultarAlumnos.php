@@ -8,13 +8,13 @@
 <body>
     <?php include 'home.php';
           include 'conexion.php';
-          $sql ="SELECT + FROM alumnos";
+          $sql ="SELECT * FROM alumnos";
           $datos = $conexion->query($sql);   
     ?>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <?php if($datos->$num_row->0){?>
+                <?php if($datos->$num_row==0){?>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -37,10 +37,13 @@
                                     <td><?php echo $registro["edad"]?></td>
                                     <td><?php echo $registro["turno"]?></td>
                                     <td><?php echo $registro["sexo"]?></td>
+                                    <td>
+
+                                    </td>
                                 </tr>
                         </tbody>
                     </table>
-                <?php }else{?>
+                <?php}else{?>
                     <h3>No existen alumnos en la base de datos</h3>
                 <?php}?>        
             </div>

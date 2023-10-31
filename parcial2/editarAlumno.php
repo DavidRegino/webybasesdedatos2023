@@ -7,32 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include 'home.php';?>
+    <?php include 'home.php';
+           include 'conexion.php';
+           $id = $_GET ['id'];
+           $sql = "SELECT * FROM alumnos id=".$id;
+
+           $datos=$conexion->query($sql);
+           $alumno = $datos->fetch_assoc()[0];
+    ?>
 
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <form action="" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $alumno["id"];?>">
                     <div class="form-group">
                         <label for="">nombre</label>
-                        <input name="nombre" type="text" class="form-control" placeholder="pon tu nombre" required>
+                        <input value="<?php echo $alumno["nombre"];?>" name="nombre" type="text" class="form-control" placeholder="pon tu nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="">Numero de Control</label> 
-                        <input name="nc" type="text" class="form-control" placeholder="Pon tu numero de control" required>
+                        <input value="<?php echo $alumno["numero_control"];?>" name="nc" type="text" class="form-control" placeholder="Pon tu numero de control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Semestre</label>
-                        <input name="semestre" type="number" class="form-control" placeholder="pon tu semestre" required>
+                        <input value="<?php echo $alumno["semestre"];?>" name="semestre" type="number" class="form-control" placeholder="pon tu semestre" required>
                     </div>
                     <div class="form-group">
                         <label for="">Edad</label>
-                        <input name="edad" type="number" class="form-control" placeholder="Pon tun edad" required>
+                        <input value="<?php echo $alumno["edad"];?>" name="edad" type="number" class="form-control" placeholder="Pon tun edad" required>
                     </div>
                     <div class="form-group">
                         <label for="">Turno</label>
-                        <select name="turno" id="" class="form-control" required>
+                        <select name="turno" id="" class="form-control">
                             <option value="">selecciona el Turno</option>
+                            <option selected value="<?php echo $alumno["turno"];?>"></option>
                             <option value="MATUTINO"></option>
                             <option value="VESPERTINO"></option>
                         </select>
@@ -41,6 +50,7 @@
                         <label for="">Sexo</label>
                         <select name="sexo" id="" class="form-control" required>
                             <option value="">Selecciona el sexo</option>
+                            <option selected value="<?php echo $alumno["sexo"];?>"></option>
                             <option value="0">Femenino</option>
                             <option value="1">Masculino</option>
                             <option value="2">Otro</option>
