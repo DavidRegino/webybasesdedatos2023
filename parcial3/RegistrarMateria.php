@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 card p-4">
-                <form action="">
+                <form action="GuardarMateria.php" method="POST">
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
                         <input type="text" class="form-control" name="nombre" placeholder="Teclea la materia">

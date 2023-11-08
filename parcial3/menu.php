@@ -18,6 +18,8 @@
             <li><a class="dropdown-item" href="consultarAlumnos.php">Consultar alumnos</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="RegistrarAlumno.php">Registar alumno</a></li>
+            <li><a class="dropdown-item" href="consultarMaterias.php">Consultar materias</a></li>
+            <li><a class="dropdown-item" href="RegistrarMateria.php">Registrar materias</a></li>
           </ul>
         </li>
       </ul>
