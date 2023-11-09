@@ -25,8 +25,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 card m-4 p-4">
-                <h2>Registrar Alumno</h2><hr>
-                <form action="ActualizarAlumno.php" method="POST">
+                <h2>Registrar Materias</h2><hr>
+                <form action="ActualizarMaterias.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $materias["id"]; ?>">
                     <div class="form-group">
                         <label for="">Nombre:</label>
@@ -39,11 +39,13 @@
                     <div class="form-group">
                         <label for="">Especialidad:</label>
                         <select name="especialidad" class="form-control" required>
-                            <option value="">Selecciona el especialidad</option>
                             <option selected value="<?php echo $materias["especialidad"]; ?>"><?php echo $materias["especialidad"]; ?></option>
-                            <option value="0">FEMENINO</option>
-                            <option value="1">MASCULINO</option>
-                            <option value="2">Prefiero no responder</option>
+                            <option value="">Selecciona el especialidad</option>
+                            <option value="PROGRAMACIÓN">PROGRAMACIÓN</option>
+                            <option value="CONTABILIDAD">CONTABILIDAD</option>
+                            <option value="OFIMÁTICA">OFIMÁTICA</option>
+                            <option value="CONSTRUCCIÓN">CONSTRUCCIÓN</option>
+                            <option value="ELECTRÓNICA">ELECTRÓNICA</option>
                         </select>
                     </div><br>
                     <div>

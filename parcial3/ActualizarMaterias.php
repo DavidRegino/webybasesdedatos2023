@@ -6,7 +6,7 @@
     $semestre = $_POST["semestre"];
     $especialidad = $_POST["especialidad"];
 
-    $sql = "UPDATE materias SET nombre='".$nombre."', semestre=".$semestre.", especialidad=".$especialidad." WHERE id=".$id;
+    $sql = "UPDATE materias SET nombre='".$nombre."', semestre=".$semestre.", especialidad='".$especialidad."' WHERE id=".$id;
 
     if($conexion->query($sql) === TRUE){
         header("Location: consultarMaterias.php");
