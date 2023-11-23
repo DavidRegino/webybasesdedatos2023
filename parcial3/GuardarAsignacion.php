@@ -18,3 +18,4 @@
             echo "<h3><a href='inicio.php'>Regresar a inicio</a></h3>";
         }
     }
+?>
